@@ -1,3 +1,4 @@
+
 from flask import Flask, request
 
 app = Flask(__name__)
@@ -23,6 +24,12 @@ def receive_message():
                         response_sent_nontext = get_message()
                         send_message(recipient_id, response_sent_nontext)
         return "Message Processed"
-    
+
+def send_message(recipient-id, response):
+
+    bot.send_text-message(recipient_id, response)
+    return "success"
+
+
 if __name__ == '__main__':
     app.run()
