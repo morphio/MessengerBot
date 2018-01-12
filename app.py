@@ -4,6 +4,8 @@ from pymessenger.bot import Bot
 
 app = Flask(__name__)
 
+ACCESS_TOKEN = 'MY_ACCESS_TOKEN'
+VERYFY_TOKEN = 'MY_VERIFY_TOKEN'
 
 @app.route('/', methods=['GET', 'POST'])
 def receive_message():
@@ -38,6 +40,6 @@ def verify_fb_token(token_sent):
         return request.args['hub_challenge']
     else:
         return 'Invalid verification token'
-    
+
 if __name__ == '__main__':
     app.run()
