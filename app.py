@@ -1,12 +1,13 @@
-
+import random
 from flask import Flask, request
+from pymessenger.bot import Bot
 
 app = Flask(__name__)
 
 
 @app.route('/', methods=['GET', 'POST'])
 def receive_message():
-    if request.method == 'GET'
+    if request.method == 'GET':
 
         token_sent = request.args["hub.verify_token"]
         return verify_fb_token(token_sent)
@@ -25,11 +26,13 @@ def receive_message():
                         send_message(recipient_id, response_sent_nontext)
         return "Message Processed"
 
-def send_message(recipient-id, response):
+def send_message(recipient_id, response):
 
     bot.send_text-message(recipient_id, response)
     return "success"
 
-
+def get_message():
+    sample_responses = ["Потрясающе", "Я вами горжусь", "Продолжайте в том же духе"]
+    return random.choice(sample_responses)
 if __name__ == '__main__':
     app.run()
