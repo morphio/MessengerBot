@@ -27,12 +27,17 @@ def receive_message():
         return "Message Processed"
 
 def send_message(recipient_id, response):
-
     bot.send_text-message(recipient_id, response)
     return "success"
 
 def get_message():
     sample_responses = ["Потрясающе", "Я вами горжусь", "Продолжайте в том же духе"]
     return random.choice(sample_responses)
+def verify_fb_token(token_sent):
+    if token_sent ==VEIFY_TOKEN:
+        return request.args['hub_challenge']
+    else:
+        return 'Invalid verification token'
+    
 if __name__ == '__main__':
     app.run()
